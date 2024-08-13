@@ -1,0 +1,23 @@
+﻿@model MilkyProject.WebUi.Dtos.ProductDtos.CreateProductDto
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<form method="post">
+    <div class="conteiner">
+        <label>Ürün Adı</label>
+        <input type="text" asp-for="productName" class="form-control" />
+        <br />
+        <label>Ürünün Eski Fiyatı</label>
+        <input type="text" asp-for="oldPrice" class="form-control" />
+        <br />
+        <label>Ürünün Yeni Fiyatı</label>
+        <input type="text" asp-for="newPrice" class="form-control" />
+        <br />
+        <label>Ürün Durumu</label>
+        <input type="text" asp-for="status" class="form-control" />
+        <br />
+        <button class="btn btn-primary">Kaydet</button>
+    </div>
+</form>

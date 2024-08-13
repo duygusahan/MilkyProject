@@ -1,0 +1,29 @@
+﻿@model List<MilkyProject.WebUi.Dtos.ResultCategoryDto>
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Kategori Adı</th>
+        <th>Sil</th>
+        <th>Güncele</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.categoryId</td>
+            <td>@item.categoryName</td>
+
+            <td><a href="/Category/DeleteCategory/@item.categoryId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Category/UpdateCategory/@item.categoryId" class="btn btn-success">Guncelle</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Category/CreateCategory/" class="btn btn-primary">Yeni Kategori Ekle</a>
+
+
