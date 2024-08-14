@@ -10,7 +10,9 @@ namespace MilkyProject.EntityLayer.Concrete
     {
         public int EmployeId { get; set; }
         public string EmployeName { get; set; }
-        public string EmployeJob { get; set; }
         public string ImageUrl { get; set; }
+
+        public int? JobId { get; set; }
+        public Job Job { get; set; }
     }
 }

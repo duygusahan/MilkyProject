@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MilkyProject.DataAccessLayer.Context;
 
@@ -11,9 +12,10 @@ using MilkyProject.DataAccessLayer.Context;
 namespace MilkyProject.DataAccessLayer.Migrations
 {
     [DbContext(typeof(MilkyContext))]
-    partial class MilkyContextModelSnapshot : ModelSnapshot
+    [Migration("20240813070946_mig10")]
+    partial class mig10
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -330,6 +332,10 @@ namespace MilkyProject.DataAccessLayer.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EmployeId"), 1L, 1);
 
+                    b.Property<string>("EmployeJob")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("EmployeName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -338,12 +344,7 @@ namespace MilkyProject.DataAccessLayer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("JobId")
-                        .HasColumnType("int");
-
                     b.HasKey("EmployeId");
-
-                    b.HasIndex("JobId");
 
                     b.ToTable("Employes");
                 });
@@ -363,23 +364,6 @@ namespace MilkyProject.DataAccessLayer.Migrations
                     b.HasKey("GalleryId");
 
                     b.ToTable("Galleries");
-                });
-
-            modelBuilder.Entity("MilkyProject.EntityLayer.Concrete.Job", b =>
-                {
-                    b.Property<int>("JobId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("JobId"), 1L, 1);
-
-                    b.Property<string>("JobName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("JobId");
-
-                    b.ToTable("Jobs");
                 });
 
             modelBuilder.Entity("MilkyProject.EntityLayer.Concrete.Newsletter", b =>
@@ -406,9 +390,6 @@ namespace MilkyProject.DataAccessLayer.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductId"), 1L, 1);
 
-                    b.Property<int?>("CategoryId")
-                        .HasColumnType("int");
-
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
@@ -425,8 +406,6 @@ namespace MilkyProject.DataAccessLayer.Migrations
                         .HasColumnType("bit");
 
                     b.HasKey("ProductId");
-
-                    b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
                 });
@@ -575,34 +554,6 @@ namespace MilkyProject.DataAccessLayer.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("MilkyProject.EntityLayer.Concrete.Employe", b =>
-                {
-                    b.HasOne("MilkyProject.EntityLayer.Concrete.Job", "Job")
-                        .WithMany("Employes")
-                        .HasForeignKey("JobId");
-
-                    b.Navigation("Job");
-                });
-
-            modelBuilder.Entity("MilkyProject.EntityLayer.Concrete.Product", b =>
-                {
-                    b.HasOne("MilkyProject.EntityLayer.Concrete.Category", "Category")
-                        .WithMany("Products")
-                        .HasForeignKey("CategoryId");
-
-                    b.Navigation("Category");
-                });
-
-            modelBuilder.Entity("MilkyProject.EntityLayer.Concrete.Category", b =>
-                {
-                    b.Navigation("Products");
-                });
-
-            modelBuilder.Entity("MilkyProject.EntityLayer.Concrete.Job", b =>
-                {
-                    b.Navigation("Employes");
                 });
 #pragma warning restore 612, 618
         }

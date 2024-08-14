@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace MilkyProject.BusinnessLayer.Abstract
 {
-    public interface IProductService:IGenericService<Product>
+    public interface IJobService:IGenericService<Job>
     {
-        public List<Product> TGetProductsWithCategory();
     }
 }

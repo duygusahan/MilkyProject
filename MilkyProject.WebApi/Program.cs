@@ -3,6 +3,7 @@ using MilkyProject.BusinnessLayer.Concrete;
 using MilkyProject.DataAccessLayer.Abstract;
 using MilkyProject.DataAccessLayer.Context;
 using MilkyProject.DataAccessLayer.EntityFramework;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -41,6 +42,11 @@ builder.Services.AddScoped<IContactService , ContactManager>();
 
 builder.Services.AddScoped<ISocialMediaDal , EfSocialMediaDal>();
 builder.Services.AddScoped<ISocialMediaService , SocialMediaManager>(); 
+
+builder.Services.AddScoped<IJobDal , EfJobDal>();
+builder.Services.AddScoped<IJobService , JobManager>(); 
+
+builder.Services.AddControllersWithViews().AddJsonOptions(options=>options.JsonSerializerOptions.ReferenceHandler=ReferenceHandler.IgnoreCycles);
 
 builder.Services.AddDbContext<MilkyContext>();
 

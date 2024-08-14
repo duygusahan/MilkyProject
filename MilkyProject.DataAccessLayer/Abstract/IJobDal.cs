@@ -5,10 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MilkyProject.BusinnessLayer.Abstract
+namespace MilkyProject.DataAccessLayer.Abstract
 {
-    public interface IProductService:IGenericService<Product>
+    public interface IJobDal:IGenericDal<Job>
     {
-        public List<Product> TGetProductsWithCategory();
     }
 }

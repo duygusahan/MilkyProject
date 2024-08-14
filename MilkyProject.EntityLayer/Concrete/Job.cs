@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace MilkyProject.EntityLayer.Concrete
 {
-    public class Category
+    public class Job
     {
-        public int CategoryId { get; set; }
-        public string? CategoryName { get; set; }
-        public List<Product> Products { get; set; }
+        public int JobId { get; set; }
+        public string JobName { get; set; }
+        public List<Employe> Employes { get; set; }
     }
 }
