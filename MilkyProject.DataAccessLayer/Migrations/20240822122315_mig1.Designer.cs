@@ -12,8 +12,8 @@ using MilkyProject.DataAccessLayer.Context;
 namespace MilkyProject.DataAccessLayer.Migrations
 {
     [DbContext(typeof(MilkyContext))]
-    [Migration("20240813074427_mig11")]
-    partial class mig11
+    [Migration("20240822122315_mig1")]
+    partial class mig1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -381,7 +381,7 @@ namespace MilkyProject.DataAccessLayer.Migrations
 
                     b.HasKey("JobId");
 
-                    b.ToTable("Job");
+                    b.ToTable("Jobs");
                 });
 
             modelBuilder.Entity("MilkyProject.EntityLayer.Concrete.Newsletter", b =>

@@ -9,5 +9,6 @@ namespace MilkyProject.DataAccessLayer.Abstract
 {
     public interface IEmployeDal:IGenericDal<Employe>
     {
+        List<Employe> GetEmployeWithJob();
     }
 }

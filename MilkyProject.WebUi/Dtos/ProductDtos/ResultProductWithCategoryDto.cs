@@ -12,7 +12,7 @@
         public Category category { get; set; }
         public class Category
         {
-            public string CategoryName {  get; set; }   
+            public string CategoryName { get; set; }
         }
     }
 }

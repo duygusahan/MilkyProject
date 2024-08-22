@@ -28,6 +28,11 @@ namespace MilkyProject.BusinnessLayer.Concrete
             return _employeDal.GetById(id); 
         }
 
+        public List<Employe> TGetEmployeWithJob()
+        {
+           return _employeDal.GetEmployeWithJob();
+        }
+
         public List<Employe> TGetListAll()
         {
             return _employeDal.GetListAll();

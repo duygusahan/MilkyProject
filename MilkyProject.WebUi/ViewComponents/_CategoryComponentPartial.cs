@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MilkyProject.WebUi.Dtos.EmployeeDtos;
+using MilkyProject.WebUi.Dtos;
 using Newtonsoft.Json;
 
 namespace MilkyProject.WebUi.ViewComponents
 {
-    public class _EmployeeComponentPartial : ViewComponent
+    public class _CategoryComponentPartial:ViewComponent
     {
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public _EmployeeComponentPartial(IHttpClientFactory httpClientFactory)
+        public _CategoryComponentPartial(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }
@@ -16,14 +16,14 @@ namespace MilkyProject.WebUi.ViewComponents
         public async Task<IViewComponentResult> InvokeAsync()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:7272/api/Employer/GetEmployeWithJob");
+            var responseMessage = await client.GetAsync("https://localhost:7272/api/Category");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData= await responseMessage.Content.ReadAsStringAsync();    
-                var value=JsonConvert.DeserializeObject<List<ResultEmployeWithJobDto>>(jsonData);
+                var value=JsonConvert.DeserializeObject<List<ResultCategoryDto>>(jsonData);
                 return View(value);
             }
-            return View();
+            return View();  
         }
     }
 }
