@@ -10,5 +10,6 @@ namespace MilkyProject.DataAccessLayer.Abstract
     public interface IEmployeDal:IGenericDal<Employe>
     {
         List<Employe> GetEmployeWithJob();
+        List<Employe> GetFirst3EmployeWithJob();
     }
 }

@@ -62,19 +62,20 @@
 
 
     <!-- Team Start -->
-    @await Component.InvokeAsync("_EmployeeComponentPartial")
+    @await Component.InvokeAsync("_First3EmployeComponentPartial")
     <!-- Team End -->
 
 
     <!-- Testimonial Start -->
     @await Component.InvokeAsync("_TestimonialComponentPartial")
     <!-- Testimonial End -->
-   @*  deneme  *@
-
-
+    @await Component.InvokeAsync("_AdressAndBusinessHourComponentPartial")
     <!-- Footer Start -->
-    @await Component.InvokeAsync("_FooterComponentPartial")
-    <!-- Footer End -->
+   
+    @await Component.InvokeAsync("_NewsletterPartialComponent")
+               
+           
+
 
 
     <!-- Copyright Start -->

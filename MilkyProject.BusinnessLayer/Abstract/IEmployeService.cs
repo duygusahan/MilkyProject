@@ -10,5 +10,7 @@ namespace MilkyProject.BusinnessLayer.Abstract
     public interface IEmployeService:IGenericService<Employe>
     {
         public List<Employe> TGetEmployeWithJob();
+
+        public List<Employe> TGetFirst3EmployeWithJob();
     }
 }

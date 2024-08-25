@@ -1,0 +1,41 @@
+﻿@model List<MilkyProject.WebUi.Dtos.AdressDtos.ResultAdressDto>
+
+<div class="container-fluid bg-dark footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        @foreach(var item in Model)
+        {
+            <div class="row justify-content-center g-5">
+                <div class="col-lg-3 col-md-6 text-start">
+                    <h5 class="text-white mb-4">Ofisimiz</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>@item.AdressDetail</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>@item.Phone</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>@item.Mail</p>
+                    <div class="d-flex justify-content-start pt-3">
+                        <a class="btn btn-square btn-secondary rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-secondary rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-secondary rounded-circle me-2" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-secondary rounded-circle me-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-start">
+                    <h5 class="text-white mb-4">Hızlı Bağlantılar</h5>
+                    <a class="btn btn-link d-block" href="">Hakkımızda</a>
+                    <a class="btn btn-link d-block" href="">Bize Ulaşın</a>
+                    <a class="btn btn-link d-block" href="">Hizmetlerimiz</a>
+                    <a class="btn btn-link d-block" href="">Ekibimiz</a>
+                    <a class="btn btn-link d-block" href="">Ürünlerimiz</a>
+                </div>
+                <div class="col-lg-3 col-md-6 text-start">
+                    <h5 class="text-white mb-4">Çalışma Saatlerimiz</h5>
+                    <p class="mb-1">Pazartesi - Cuma</p>
+                    <h6 class="text-light">@item.Weekdays</h6>
+                    <p class="mb-1">Cumartesi</p>
+                    <h6 class="text-light">@item.Saturday</h6>
+                    <p class="mb-1">Pazar</p>
+                    <h6 class="text-light">@item.Sunday</h6>
+                </div>
+            </div>
+        }
+        
+    </div>
+</div>
