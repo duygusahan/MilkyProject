@@ -1,0 +1,31 @@
+﻿<form method="post" asp-controller="Contact" asp-action="CreateContact">
+    <div class="row g-3">
+        <div class="col-md-6">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="name" name="Name" placeholder="Your Name" required>
+                <label for="name">Adınız</label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-floating">
+                <input type="email" class="form-control" id="email" name="Email" placeholder="Your Email" required>
+                <label for="email">Email Adresiniz</label>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="subject" name="Subject" placeholder="Subject" required>
+                <label for="subject">Konu</label>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Mesajınızı buraya bırakın" id="message" name="Message" style="height: 250px" required></textarea>
+                <label for="message">Mesaj</label>
+            </div>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-secondary rounded-pill py-3 px-5" type="submit">Mesaj Gönder</button>
+        </div>
+    </div>
+</form>

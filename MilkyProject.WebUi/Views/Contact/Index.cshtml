@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/MilkyLayout.cshtml";
+}
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/MilkyLayout.cshtml";
+}
+
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+            <p class="section-title bg-white text-center text-primary px-3">Bize Ulaşın</p>
+
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                <h3 class="mb-4">Herhangi Bir Sorunuz Varsa Lütfen Bizimle İletişime Geçin</h3>
+
+                @await Component.InvokeAsync("_ContactComponentPartial")
+
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                <h3 class="mb-4">İletişim Bilgileri</h3>
+                <div class="d-flex border-bottom pb-3 mb-3">
+                    <div class="flex-shrink-0 btn-square bg-secondary rounded-circle">
+                        <i class="fa fa-map-marker-alt text-body"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h6>Ofisimiz</h6>
+                        <span>Taksim Meydanı, 34437 Beyoğlu/İstanbul, Türkiye</span>
+                    </div>
+                </div>
+                <div class="d-flex border-bottom pb-3 mb-3">
+                    <div class="flex-shrink-0 btn-square bg-secondary rounded-circle">
+                        <i class="fa fa-phone-alt text-body"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h6>Bizi Arayın</h6>
+                        <span>+012 345 6789</span>
+                    </div>
+                </div>
+                <div class="d-flex border-bottom-0 pb-3 mb-3">
+                    <div class="flex-shrink-0 btn-square bg-secondary rounded-circle">
+                        <i class="fa fa-envelope text-body"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h6>Mail Adresimiz</h6>
+                        <span>Milky@gmail.com</span>
+                    </div>
+                </div>
+
+                <iframe class="w-100 rounded"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d192217.63524059367!2d28.857048718921273!3d41.00963348577813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caba6b1c7620b1%3A0xdce017f3f9b12e8e!2sIstanbul%2C%20Turkey!5e0!3m2!1sen!2sbd!4v1692899270103!5m2!1sen!2sbd"
+                        frameborder="0" style="min-height: 300px; border:0;" allowfullscreen="" aria-hidden="false"
+                        tabindex="0"></iframe>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+

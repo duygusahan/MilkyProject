@@ -13,7 +13,7 @@ namespace MilkyProject.DataAccessLayer.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=DESKTOP-F4FLQJD ; initial Catalog=MilkyDb ; integrated Security=true");
+            optionsBuilder.UseSqlServer("Data Source=DESKTOP-F4FLQJD ; initial Catalog=MilkyDb2 ; integrated Security=true");
         }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products  { get; set; }

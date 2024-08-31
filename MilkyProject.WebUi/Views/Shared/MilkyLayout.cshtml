@@ -23,8 +23,9 @@
     <!-- Carousel Start -->
     @RenderBody()
     <!-- Testimonial End -->
+    @await Component.InvokeAsync("_AdressAndBusinessHourComponentPartial")
     <!-- Footer Start -->
-    @await Component.InvokeAsync("_FooterComponentPartial")
+    @await Component.InvokeAsync("_NewsletterPartialComponent")
     <!-- Footer End -->
     <!-- Copyright Start -->
     <div class="container-fluid bg-secondary text-body copyright py-4">
