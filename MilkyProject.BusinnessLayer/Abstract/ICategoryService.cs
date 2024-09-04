@@ -9,5 +9,6 @@ namespace MilkyProject.BusinnessLayer.Abstract
 {
     public interface ICategoryService:IGenericService<Category>
     {
+        public int TGetTotalCategoryCount();
     }
 }

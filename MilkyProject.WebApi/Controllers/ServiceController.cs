@@ -45,5 +45,11 @@ namespace MilkyProject.WebApi.Controllers
             var value=_serviceService.TGetById(id);
             return Ok(value);
         }
+        [HttpGet("GetTotalServiceCount")]
+        public IActionResult GetTotalServiceCount()
+        {
+            var value = _serviceService.TGetTotalServiceCount();
+            return Ok(value);   
+        }
     }
 }

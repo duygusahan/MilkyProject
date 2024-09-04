@@ -28,14 +28,29 @@ namespace MilkyProject.BusinnessLayer.Concrete
            return  _productDal.GetById(id);
         }
 
+        public Dictionary<string, int> TGetCategoryProductPercentage()
+        {
+            return _productDal.GetCategoryProductPercentage();  
+        }
+
         public List<Product> TGetListAll()
         {
            return _productDal.GetListAll();
         }
 
+        public Dictionary<string, int> TGetProductCountByCategory()
+        {
+            return _productDal.GetProductCountByCategory();
+        }
+
         public List<Product> TGetProductsWithCategory()
         {
             return _productDal.GetProductsWithCategory();
+        }
+
+        public int TGetTotalProductCount()
+        {
+            return _productDal.GetTotalProductCount();
         }
 
         public void TInsert(Product entity)
@@ -47,5 +62,7 @@ namespace MilkyProject.BusinnessLayer.Concrete
         {
             _productDal.Update(entity);
         }
+
+       
     }
 }

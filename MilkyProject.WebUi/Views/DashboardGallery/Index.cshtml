@@ -1,0 +1,70 @@
+﻿@model List<MilkyProject.WebUi.Dtos.GalleryDtos.ResultGalleryDto>
+
+@{
+    ViewData["Title"] = "Milk Galeri";
+    Layout = "~/Views/Shared/DashboardLayout.cshtml";
+}
+<div id="content">
+    <!-- topbar -->
+    <div class="topbar">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="full">
+                <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
+                <div class="logo_section">
+                    <a href="index.html"><img class="img-responsive" src="/pluto-1.0.0/images/logo/logo.png" alt="#" /></a>
+                </div>
+
+            </div>
+        </nav>
+    </div>
+    <!-- end topbar -->
+    <!-- dashboard inner -->
+    <div class="midde_cont">
+        <div class="container-fluid">
+            <div class="row column_title">
+                <div class="col-md-12">
+                    <div class="page_title">
+                        <h2>Milk Galeri</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Images Table -->
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Görsel</th>
+                                <th>Sil</th>
+                                <th>Güncelle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach(var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.GalleryId</td>
+                                    <td><img src="@item.ImageUrl"  style="width: 50px; height: 50px; border-radius: 50%;"></td>
+
+                                    <td><a href="/DashboardGallery/DeleteGallery/@item.GalleryId" class="btn btn-danger">Sil</a></td>
+                                    
+                                    <td><a href="/DashboardGallery/UpdateGallery/@item.GalleryId" class="btn btn-primary">Güncelle</a></td>
+                                </tr>
+                            }
+                            
+                            
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                    <a href="/DashboardGallery/CreateGallery" class="btn btn-primary" >Resim Yükle</a>
+                    
+                </div>
+            </div>
+            <!-- End Images Table -->
+
+        </div>
+    </div>
+    <!-- end dashboard inner -->
+</div>

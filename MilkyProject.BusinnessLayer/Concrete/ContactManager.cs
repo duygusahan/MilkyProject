@@ -28,9 +28,19 @@ namespace MilkyProject.BusinnessLayer.Concrete
            return _contactDal.GetById(id);  
         }
 
+        public List<Contact> TGetLast4Contact()
+        {
+            return _contactDal.GetLast4Contact();
+        }
+
         public List<Contact> TGetListAll()
         {
            return _contactDal.GetListAll();
+        }
+
+        public int TGetTotalContactCount()
+        {
+            return _contactDal.GetTotalContactCount();
         }
 
         public void TInsert(Contact entity)

@@ -44,5 +44,13 @@ namespace MilkyProject.DataAccessLayer.EntityFramework
             }).Take(3).ToList();
             return values;
         }
+
+        public int GetTotalEmployeeCount()
+        {
+            using (var context = new MilkyContext())
+            {
+                return context.Employes.Count();
+            }
+        }
     }
 }

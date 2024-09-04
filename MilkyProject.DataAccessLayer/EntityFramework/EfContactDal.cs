@@ -15,5 +15,23 @@ namespace MilkyProject.DataAccessLayer.EntityFramework
         public EfContactDal(MilkyContext context) : base(context)
         {
         }
+
+        public List<Contact> GetLast4Contact()
+        {
+            using (var context = new MilkyContext())
+            {
+                return context.Contacts.OrderByDescending(x => x.ContactId).Take(4).ToList();
+            }
+        }
+
+        public int GetTotalContactCount()
+        {
+            using (var context = new MilkyContext())
+            {
+                return context.Contacts.Count();
+            }
+        }
+
+        
     }
 }

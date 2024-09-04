@@ -11,5 +11,6 @@ namespace MilkyProject.DataAccessLayer.Abstract
     {
         List<Employe> GetEmployeWithJob();
         List<Employe> GetFirst3EmployeWithJob();
+        int GetTotalEmployeeCount();
     }
 }

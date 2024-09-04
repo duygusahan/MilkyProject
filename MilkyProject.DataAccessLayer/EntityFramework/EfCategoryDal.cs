@@ -15,5 +15,13 @@ namespace MilkyProject.DataAccessLayer.EntityFramework
         public EfCategoryDal(MilkyContext context) : base(context)
         {
         }
+
+        public int GetTotalCategoryCount()
+        {
+            using (var context = new MilkyContext())
+            {
+                return context.Categories.Count();
+            }
+        }
     }
 }

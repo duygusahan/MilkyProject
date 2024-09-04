@@ -43,6 +43,11 @@ namespace MilkyProject.BusinnessLayer.Concrete
             return _employeDal.GetListAll();
         }
 
+        public int TGetTotalEmployeeCount()
+        {
+            return _employeDal.GetTotalEmployeeCount();
+        }
+
         public void TInsert(Employe entity)
         {
             _employeDal.Insert(entity);

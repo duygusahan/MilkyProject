@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/DashboardLayout.cshtml";
+}
+
+<div id="content">
+    <!-- topbar -->
+    <div class="topbar">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="full">
+                <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
+                <div class="logo_section">
+                    <a href="index.html"><img class="img-responsive" src="/pluto-1.0.0/images/logo/logo.png" alt="#" /></a>
+                </div>
+               
+            </div>
+        </nav>
+    </div>
+    <!-- end topbar -->
+    <!-- dashboard inner -->
+    <div class="midde_cont">
+        <div class="container-fluid">
+            <div class="row column_title">
+                <div class="col-md-12">
+                    <div class="page_title">
+                        <h2>Dashboard</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row column1">
+                @await Component.InvokeAsync("_DashboardProductCountComponentPartial")
+                @await Component.InvokeAsync("_DashboardEmployeCountComponentPartial")
+                @await Component.InvokeAsync("_DashboardCategoryCountComponentPartial")
+                @await Component.InvokeAsync("_DashboardNewsletterCountComponentPartial")
+  
+            </div>
+            <div class="row column1 social_media_section">
+                @await Component.InvokeAsync("_DashboardContactCountComponentPartial")
+                @await Component.InvokeAsync("_DashboardServiceCountComponentPartial")
+                @await Component.InvokeAsync("_DashboardTestimonialCountComponentPartial")
+                @await Component.InvokeAsync("_DashboardGalleryCountComponentPartial")
+                
+            </div>
+           
+            <!-- graph -->
+            
+            <!-- end graph -->
+            <div class="row column3">
+                <!-- testimonial -->
+                
+                <!-- end testimonial -->
+                <!-- progress bar -->
+                @await Component.InvokeAsync("_DashboardContactUpdatesComponentPartial")
+                @* @await Component.InvokeAsync("_DashboardCategoryComponentPartial") *@
+                @await Component.InvokeAsync("_DashboardCategoryProductPercent")
+                <!-- end progress bar -->
+            </div>
+            <div class="row column4 graph">
+                @await Component.InvokeAsync("_DashboardGallerySliderComponentPartial")
+                @await Component.InvokeAsync("_DashboardTestimonialsComponentPartial")
+                
+            </div>
+        </div>
+       
+        
+    </div>
+    <!-- end dashboard inner -->
+</div>

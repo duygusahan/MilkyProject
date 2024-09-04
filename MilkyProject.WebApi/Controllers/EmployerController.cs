@@ -59,5 +59,11 @@ namespace MilkyProject.WebApi.Controllers
             var value = _employeService.TGetFirst3EmployeWithJob();
             return Ok(value);
         }
+        [HttpGet("GetTotalEmployeeCount")]
+        public IActionResult GetTotalEmployeeCount()
+        {
+            var value = _employeService.TGetTotalEmployeeCount();
+            return Ok(value);   
+        }
     }
 }

@@ -10,5 +10,9 @@ namespace MilkyProject.BusinnessLayer.Abstract
     public interface IProductService:IGenericService<Product>
     {
         public List<Product> TGetProductsWithCategory();
+        public int TGetTotalProductCount();
+        public Dictionary<string, int> TGetProductCountByCategory();
+       
+        public Dictionary<string, int> TGetCategoryProductPercentage();
     }
 }

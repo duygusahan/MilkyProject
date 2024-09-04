@@ -9,5 +9,7 @@ namespace MilkyProject.DataAccessLayer.Abstract
 {
     public interface IContactDal:IGenericDal<Contact>
     {
+        int GetTotalContactCount();
+        List<Contact> GetLast4Contact();
     }
 }

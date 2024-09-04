@@ -1,0 +1,22 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+@await Component.InvokeAsync("_DashboardHeadComponentPartial")
+<body class="dashboard dashboard_1">
+    <div class="full_container">
+        <div class="inner_container">
+            <!-- Sidebar  -->
+            @await Component.InvokeAsync("_DashboardSidebarComponentPartial")
+            <!-- end sidebar -->
+            <!-- right content -->
+            @RenderBody()
+        </div>
+    </div>
+    <!-- jQuery -->
+    @await Component.InvokeAsync("_DashboardScriptsComponentPartial")
+</body>
+</html>

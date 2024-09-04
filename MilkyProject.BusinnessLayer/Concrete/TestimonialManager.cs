@@ -33,6 +33,11 @@ namespace MilkyProject.BusinnessLayer.Concrete
             return _testimonialDal.GetListAll();
         }
 
+        public int TGetTotalTestimonialCount()
+        {
+           return _testimonialDal.GetTotalTestimonialCount();
+        }
+
         public void TInsert(Testimonial entity)
         {
             _testimonialDal.Insert(entity);

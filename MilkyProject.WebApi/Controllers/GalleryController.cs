@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MilkyProject.BusinnessLayer.Abstract;
 using MilkyProject.EntityLayer.Concrete;
@@ -48,6 +49,11 @@ namespace MilkyProject.WebApi.Controllers
             return Ok(value);
         }
 
-
+        [HttpGet("GetTotalGalleryCount")]
+        public IActionResult GetTotalGalleryCount()
+        {
+            var value=_galleryService.TGetTotalGalleryCount();
+            return Ok(value);   
+        }
     }
 }

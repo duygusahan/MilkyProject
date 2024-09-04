@@ -7,6 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\login-form-02\.DS_Store" />
+    <None Include="wwwroot\login-form-02\css\.DS_Store" />
+    <None Include="wwwroot\login-form-02\fonts\.DS_Store" />
+    <None Include="wwwroot\login-form-02\images\.DS_Store" />
+    <None Include="wwwroot\login-form-02\scss\.DS_Store" />
+    <None Include="wwwroot\pluto-1.0.0\.DS_Store" />
+    <None Include="wwwroot\pluto-1.0.0\images\.DS_Store" />
+    <None Include="wwwroot\pluto-1.0.0\images\layout_img\.DS_Store" />
+    <None Include="wwwroot\pluto-1.0.0\modules\.DS_Store" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.32" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.17" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />

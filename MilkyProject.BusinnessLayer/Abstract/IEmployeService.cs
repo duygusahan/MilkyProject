@@ -12,5 +12,6 @@ namespace MilkyProject.BusinnessLayer.Abstract
         public List<Employe> TGetEmployeWithJob();
 
         public List<Employe> TGetFirst3EmployeWithJob();
+        public int TGetTotalEmployeeCount();
     }
 }

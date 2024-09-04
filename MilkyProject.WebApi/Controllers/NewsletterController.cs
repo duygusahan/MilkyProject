@@ -44,5 +44,11 @@ namespace MilkyProject.WebApi.Controllers
             var value=_newsletterService.TGetById(id);  
             return Ok(value);
         }
+        [HttpGet("GetTotalNewsletterCount")]
+        public IActionResult GetTotalNewsletterCount()
+        {
+            var value = _newsletterService.TGetTotalNewsletterCount();
+            return Ok(value);   
+        }
     }
 }

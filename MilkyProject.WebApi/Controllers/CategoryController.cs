@@ -46,5 +46,11 @@ namespace MilkyProject.WebApi.Controllers
             var value=_categoryService.TGetById(id);
             return Ok(value);   
         }
+        [HttpGet("GetTotalCategoryCount")]
+        public IActionResult GetTotalCategoryCount()
+        {
+            var value = _categoryService.TGetTotalCategoryCount();
+            return Ok(value);   
+        }
     }
 }

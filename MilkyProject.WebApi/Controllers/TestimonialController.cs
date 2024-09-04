@@ -46,5 +46,11 @@ namespace MilkyProject.WebApi.Controllers
             var value =_testimonialService.TGetById(id);
             return Ok(value);
         }
+        [HttpGet("GetTotalTestimonialCount")]
+        public IActionResult GetTotalTestimonialCount()
+        {
+            var value=_testimonialService.TGetTotalTestimonialCount();
+            return Ok(value);   
+        }
     }
 }

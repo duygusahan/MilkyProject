@@ -9,6 +9,6 @@ namespace MilkyProject.DataAccessLayer.Abstract
 {
     public interface IServiceDal:IGenericDal<Service>
     {
-
+      int GetTotalServiceCount();
     }
 }

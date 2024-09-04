@@ -9,5 +9,6 @@ namespace MilkyProject.BusinnessLayer.Abstract
 {
     public interface IGalleryService:IGenericService<Gallery>
     {
+        public int TGetTotalGalleryCount();
     }
 }

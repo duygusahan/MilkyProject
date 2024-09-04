@@ -15,5 +15,13 @@ namespace MilkyProject.DataAccessLayer.EntityFramework
         public EfServiceDal(MilkyContext context) : base(context)
         {
         }
+
+        public int GetTotalServiceCount()
+        {
+            using (var context = new MilkyContext())
+            {
+                return context.Services.Count();
+            }
+        }
     }
 }

@@ -9,5 +9,6 @@ namespace MilkyProject.BusinnessLayer.Abstract
 {
     public interface ITestimonialService:IGenericService<Testimonial>
     {
+        public int TGetTotalTestimonialCount();
     }
 }

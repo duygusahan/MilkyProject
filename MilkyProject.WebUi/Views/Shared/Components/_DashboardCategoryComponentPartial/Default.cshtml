@@ -1,0 +1,39 @@
+﻿@model Dictionary<string, int>
+<div class="col-md-6">
+    <div class="white_shd full margin_bottom_30">
+        <div class="full graph_head">
+            <div class="heading1 margin_0">
+                <h2>Progress Bar</h2>
+            </div>
+        </div>
+        <div class="full progress_bar_inner">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="progress_bar">
+                        <!-- Skill Bars -->
+                        @foreach (var item in Model)
+                        {
+                            var categoryName = item.Key;
+                            var productCount = item.Value;
+                            // Maksimum ürün sayısına göre yüzdelik hesaplama yapabilirsiniz
+                            var maxProductCount = Model.Values.Max(); // En yüksek ürün sayısını buluyoruz
+                            var percentage = (productCount / (double)maxProductCount) * 100;
+                            <div class="progress-bar-container mb-3">
+                                <span class="skill">@categoryName</span>
+                                <div class="progress skill-bar">
+                                    <!-- Progress bar with dynamic width -->
+                                    <div class="progress-bar progress-bar-animated progress-bar-striped" role="progressbar"
+                                         aria-valuenow="@percentage" aria-valuemin="0" aria-valuemax="100"
+                                         style="width: @percentage%;"></div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

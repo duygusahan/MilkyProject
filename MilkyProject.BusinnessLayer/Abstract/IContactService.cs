@@ -9,5 +9,7 @@ namespace MilkyProject.BusinnessLayer.Abstract
 {
     public interface IContactService:IGenericService<Contact>
     {
+        public int TGetTotalContactCount();
+        public List<Contact> TGetLast4Contact();
     }
 }

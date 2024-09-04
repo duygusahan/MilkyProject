@@ -33,6 +33,11 @@ namespace MilkyProject.BusinnessLayer.Concrete
             return _serviceDal.GetListAll();
         }
 
+        public int TGetTotalServiceCount()
+        {
+           return _serviceDal.GetTotalServiceCount();
+        }
+
         public void TInsert(Service entity)
         {
             _serviceDal.Insert(entity);

@@ -14,6 +14,15 @@ namespace MilkyProject.DataAccessLayer.EntityFramework
     {
         public EfGalleryDal(MilkyContext context) : base(context)
         {
+            
+        }
+
+        public int GetTotalGalleryCount()
+        {
+            using (var context = new MilkyContext())
+            {
+                return context.Galleries.Count();
+            }
         }
     }
 }

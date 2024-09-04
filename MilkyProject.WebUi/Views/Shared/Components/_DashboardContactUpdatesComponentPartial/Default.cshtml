@@ -1,0 +1,27 @@
+﻿@model List<MilkyProject.WebUi.Dtos.ContactDtos.ResultContactDto>
+
+<div class="col-md-6">
+    
+            <div class="dash_head">
+                <h3><span><i class="fa fa-comments-o"></i> Gelen Son 4 Mesaj</span><span class="plus_green_bt"><a href="#"></a></span></h3>
+            </div>
+           
+            <div class="msg_list_main">
+                <ul class="msg_list">
+                    @foreach(var item in Model)
+                    {
+                        <li>
+                           
+                            <span>
+                                <span class="name_user">@item.Name</span>
+                                <span class="msg_user">@item.Subject</span>
+                                
+                            </span>
+                        </li>
+                    }
+                    
+                    
+                </ul>
+            </div>
+           
+</div>

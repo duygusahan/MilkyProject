@@ -15,5 +15,13 @@ namespace MilkyProject.DataAccessLayer.EntityFramework
         public EfNewsletterDal(MilkyContext context) : base(context)
         {
         }
+
+        public int GetTotalNewsletterCount()
+        {
+            using (var context = new MilkyContext())
+            {
+                return context.Newsletters.Count();
+            }
+        }
     }
 }

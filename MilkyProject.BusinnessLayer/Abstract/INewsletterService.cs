@@ -9,5 +9,6 @@ namespace MilkyProject.BusinnessLayer.Abstract
 {
     public interface INewsletterService:IGenericService<Newsletter>
     {
+        public int TGetTotalNewsletterCount();
     }
 }

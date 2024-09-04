@@ -10,5 +10,9 @@ namespace MilkyProject.DataAccessLayer.Abstract
     public interface IProductDal:IGenericDal<Product>
     {
         List<Product> GetProductsWithCategory();
+
+        Dictionary<string, int> GetProductCountByCategory();
+        int GetTotalProductCount();
+        Dictionary<string, int> GetCategoryProductPercentage();
     }
 }

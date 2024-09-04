@@ -33,6 +33,11 @@ namespace MilkyProject.BusinnessLayer.Concrete
             return _galleryDal.GetListAll();
         }
 
+        public int TGetTotalGalleryCount()
+        {
+            return _galleryDal.GetTotalGalleryCount();
+        }
+
         public void TInsert(Gallery entity)
         {
             _galleryDal.Insert(entity);
