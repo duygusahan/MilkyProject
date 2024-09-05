@@ -1,4 +1,4 @@
-﻿@model List<MilkyProject.WebUi.Dtos.ResultCategoryDto>
+﻿@model List<MilkyProject.WebUi.Dtos.ContactDtos.ResultContactDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/DashboardLayout.cshtml";
@@ -24,7 +24,7 @@
             <div class="row column_title">
                 <div class="col-md-12">
                     <div class="page_title">
-                        <h2>Milky Kategoriler</h2>
+                        <h2>Milky Gelen Mesajlar</h2>
                     </div>
                 </div>
             </div>
@@ -36,23 +36,22 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Kategori Adı</th>
-                                <th>Kategori Görseli</th>
-                                <th>Sil</th>
-                                <th>Güncelle</th>
+                                <th>Gönderen</th>
+                                <th>Mail</th>
+                                <th>Konu</th>
+                                <th>Mesaj</th>
+                              
                             </tr>
                         </thead>
                         <tbody>
                             @foreach (var item in Model)
                             {
                                 <tr>
-                                    <td>@item.categoryId</td>
-                                    <td>@item.categoryName</td>
-                                    <td><img src="@item.categoryImageUrl" style="width: 50px; height: 50px; border-radius: 50%;"></td>
-
-                                    <td><a href="/DashboardCategory/DeleteCategory.@item.categoryId" class="btn btn-danger">Sil</a></td>
-
-                                    <td><a href="/DashboardCategory/UpdateCategory/@item.categoryId" class="btn btn-primary">Güncelle</a></td>
+                                    <td>@item.ContactId</td>
+                                    <td>@item.Name</td>
+                                    <td>@item.Mail</td>
+                                    <td>@item.Subject</td>
+                                    <td>@item.Message</td>
                                 </tr>
                             }
 
@@ -60,7 +59,7 @@
                             <!-- Add more rows as needed -->
                         </tbody>
                     </table>
-                    <a href="/DashboardCategory/CreateCategory" class="btn btn-primary">Kategori Ekle</a>
+
 
                 </div>
             </div>

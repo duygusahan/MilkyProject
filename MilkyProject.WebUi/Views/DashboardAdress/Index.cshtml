@@ -1,9 +1,8 @@
-﻿@model List<MilkyProject.WebUi.Dtos.ResultCategoryDto>
+﻿@model List<MilkyProject.WebUi.Dtos.AdressDtos.ResultAdressDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/DashboardLayout.cshtml";
 }
-
 <div id="content">
     <!-- topbar -->
     <div class="topbar">
@@ -24,7 +23,7 @@
             <div class="row column_title">
                 <div class="col-md-12">
                     <div class="page_title">
-                        <h2>Milky Kategoriler</h2>
+                        <h2>Milky Adres</h2>
                     </div>
                 </div>
             </div>
@@ -36,9 +35,12 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Kategori Adı</th>
-                                <th>Kategori Görseli</th>
-                                <th>Sil</th>
+                                <th>Adres Detayları</th>
+                                <th>Telefon Numarası</th>
+                                <th>E-Mail</th>
+                                <th>Hafta İçi Çalışma Saatleri</th>
+                                <th>Cumartesi Çalışma Saatleri</th>
+                                <th>Pazar</th>
                                 <th>Güncelle</th>
                             </tr>
                         </thead>
@@ -46,13 +48,18 @@
                             @foreach (var item in Model)
                             {
                                 <tr>
-                                    <td>@item.categoryId</td>
-                                    <td>@item.categoryName</td>
-                                    <td><img src="@item.categoryImageUrl" style="width: 50px; height: 50px; border-radius: 50%;"></td>
+                                    <td>@item.AdressId</td>
+                                    <td>@item.AdressDetail</td>
+                                    <td>@item.Phone</td>
+                                    <td>@item.Mail</td>
+                                    <td>@item.Weekdays</td>
+                                    <td>@item.Saturday</td>
+                                    <td>@item.Sunday</td>
 
-                                    <td><a href="/DashboardCategory/DeleteCategory.@item.categoryId" class="btn btn-danger">Sil</a></td>
 
-                                    <td><a href="/DashboardCategory/UpdateCategory/@item.categoryId" class="btn btn-primary">Güncelle</a></td>
+
+
+                                    <td><a href="/DashboardAdress/UpdateAdress/@item.AdressId" class="btn btn-primary">Güncelle</a></td>
                                 </tr>
                             }
 
@@ -60,7 +67,7 @@
                             <!-- Add more rows as needed -->
                         </tbody>
                     </table>
-                    <a href="/DashboardCategory/CreateCategory" class="btn btn-primary">Kategori Ekle</a>
+
 
                 </div>
             </div>
@@ -70,4 +77,5 @@
     </div>
     <!-- end dashboard inner -->
 </div>
+
 

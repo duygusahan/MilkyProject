@@ -13,6 +13,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<ICategoryService, CategoryManager>();
 builder.Services.AddScoped<ICategoryDal, EfCategoryDal>();
 
+builder.Services.AddScoped<IAboutService , AboutManager>();
+builder.Services.AddScoped<IAboutDal , EfAboutDal>();
+
 builder.Services.AddScoped<ISliderService , SliderManager>();   
 builder.Services.AddScoped<ISliderDal , EfSliderDal>();   
 
