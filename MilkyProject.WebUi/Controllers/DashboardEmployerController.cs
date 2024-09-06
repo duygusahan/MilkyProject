@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using MilkyProject.DataAccessLayer.Context;
 using MilkyProject.WebUi.Dtos.CategoryDtos;
 using MilkyProject.WebUi.Dtos.EmployeeDtos;
 using Newtonsoft.Json;
@@ -18,10 +21,12 @@ namespace MilkyProject.WebUi.Controllers
         public async Task<IActionResult> Index()
         {
             var client=_httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:7272/api/Employer");
+            var responseMessage = await client.GetAsync("https://localhost:7272/api/Employer/GetEmployeWithJob");
             if (responseMessage.IsSuccessStatusCode) 
             {
-                var jsonData = await responseMessage.Content.ReadAsStringAsync();          
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();   
+                var value=JsonConvert.DeserializeObject<List<ResultEmployeWithJobDto>>(jsonData);
+                return View(value);
             }
             return View();
         }
@@ -29,6 +34,18 @@ namespace MilkyProject.WebUi.Controllers
         [HttpGet]
         public async Task<IActionResult> CreateEmployer()
         {
+            var _context = new MilkyContext();
+            var jobList = _context.Jobs
+                              .Select(j => new SelectListItem
+                              {
+                                  Value = j.JobId.ToString(),
+                                  Text = j.JobName
+                              }).ToList();
+
+            // ViewBag ile listeyi View'e gönder
+            ViewBag.JobList = new SelectList(jobList, "Value", "Text");
+
+            
             return View();
         }
         [HttpPost]
