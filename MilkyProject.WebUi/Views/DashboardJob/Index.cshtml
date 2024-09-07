@@ -1,4 +1,4 @@
-﻿@model List<MilkyProject.WebUi.Dtos.EmployeeDtos.ResultEmployeWithJobDto>
+﻿@model List<MilkyProject.WebUi.Dtos.JobDtos.ResultJobDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/DashboardLayout.cshtml";
@@ -24,7 +24,7 @@
             <div class="row column_title">
                 <div class="col-md-12">
                     <div class="page_title">
-                        <h2>Milky Çalışanlarımız</h2>
+                        <h2>Milky İş Gurpları</h2>
                     </div>
                 </div>
             </div>
@@ -36,9 +36,8 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Çalışan Görseli</th>
-                                <th>Çalışan Adı</th>
-                                <th>Çalışanın Mesleği</th>
+                                <th>Meslek Adı</th>
+                                
                                 <th>Sil</th>
                                 <th>Güncelle</th>
                             </tr>
@@ -47,15 +46,13 @@
                             @foreach (var item in Model)
                             {
                                 <tr>
-                                    <td>@item.EmployeId</td>
-                                    <td><img src="@item.ImageUrl" style="width: 50px; height: 50px; border-radius: 50%;"></td>
-                                    <td>@item.EmployeName</td>
-                                    <td>@item.job.JobName</td>
-                                    
+                                    <td>@item.JobId</td>
+                                    <td>@item.JobName</td>
 
-                                    <td><a href="/DashboardEmployer/DeleteEmployer/@item.EmployeId" class="btn btn-danger">Sil</a></td>
 
-                                    <td><a href="/DashboardEmployer/UpdateEmployer/@item.EmployeId" class="btn btn-primary">Güncelle</a></td>
+                                    <td><a href="/DashboardJob/DeleteJob/@item.JobId" class="btn btn-danger">Sil</a></td>
+
+                                    <td><a href="/DashboardJob/UpdateJob/@item.JobId" class="btn btn-primary">Güncelle</a></td>
                                 </tr>
                             }
 
@@ -63,7 +60,7 @@
                             <!-- Add more rows as needed -->
                         </tbody>
                     </table>
-                    <a href="/DashboardEmployer/CreateEmployer/" class="btn btn-primary">Çalışan Ekle</a>
+                    <a href="/DashboardJob/CreateJob/" class="btn btn-success">Meslek Ekle</a>
 
                 </div>
             </div>

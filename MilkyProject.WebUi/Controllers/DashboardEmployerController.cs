@@ -74,16 +74,23 @@ namespace MilkyProject.WebUi.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> UpdateCategory(int id)
+        public async Task<IActionResult> UpdateEmployer(int id)
         {
+           
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("https://localhost:7272/api/Employer/GetEmploye?id=" + id);
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var value = JsonConvert.DeserializeObject<UpdateCategoryDto>(jsonData);
+                var value = JsonConvert.DeserializeObject<UpdateEmployerDto>(jsonData);
                 return View(value);
             }
+            var _context = new MilkyContext();
+            var jobList = _context.Jobs.Select(j => new SelectListItem
+            {
+                Value = j.JobId.ToString(),
+                Text = j.JobName
+            }).ToList();
             return View();
         }
         [HttpPost]

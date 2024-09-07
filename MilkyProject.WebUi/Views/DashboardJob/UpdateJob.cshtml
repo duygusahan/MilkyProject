@@ -1,6 +1,6 @@
-﻿@model MilkyProject.WebUi.Dtos.EmployeeDtos.CreateEmployerDto
+﻿@model MilkyProject.WebUi.Dtos.JobDtos.ResultJobDto
 @{
-    ViewData["Title"] = "CreateEmployer";
+    ViewData["Title"] = "UpdateJob";
     Layout = "~/Views/Shared/DashboardLayout.cshtml";
 }
 
@@ -23,40 +23,33 @@
             <div class="row column_title">
                 <div class="col-md-12">
                     <div class="page_title">
-                        <h2>Milky Çalışan Ekleme</h2>
+                        <h2>Meslek Güncelleme</h2>
                     </div>
                 </div>
             </div>
 
-            <!-- Image Upload Form -->
+            <!-- Image Update Form -->
             <div class="row">
                 <div class="col-md-12">
                     <form method="post">
                         <div class="form-group">
-                            <label for="ImageTitle">Çalışan Adı:</label>
-                            <input type="text" class="form-control" asp-for="EmployeName" required>
+                            <label for="GalleryId">Meslek ID:</label>
+                            <input type="text" class="form-control" asp-for="JobId" readonly />
                         </div>
 
                         <div class="form-group">
-                            <label>Çalışan Görsel Yolu:</label>
-                            <input type="text" class="form-control" asp-for="ImageUrl" required>
+                            <label for="ImageTitle">Kategori Adı</label>
+                            <input type="text" class="form-control" asp-for="JobName"
+                                   value="@Model.JobName" required>
                         </div>
 
-                        
+                     
 
-                        <div class="form-group">
-                            <label>Çalışanın Mesleği</label>
-                            <select class="form-control" asp-for="JobId" asp-items="ViewBag.JobList" required>
-                                <option value="">Seçiniz</option>
-                            </select>
-                        </div>
-
-
-                        <button type="submit" class="btn btn-success">Çalışan Ekle</button>
+                        <button type="submit" class="btn btn-primary">Güncelle</button>
                     </form>
                 </div>
             </div>
-            <!-- End Image Upload Form -->
+            <!-- End Image Update Form -->
 
         </div>
     </div>

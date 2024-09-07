@@ -1,11 +1,8 @@
-﻿@model List<MilkyProject.WebUi.Dtos.GalleryDtos.ResultGalleryDto>
-
+﻿@model List<MilkyProject.WebUi.Dtos.ProductDtos.ResultProductWithCategoryDto>
 @{
-    ViewData["Title"] = "Milk Galeri";
+    ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/DashboardLayout.cshtml";
 }
-
-
 
 <div id="content">
     <!-- topbar -->
@@ -32,7 +29,7 @@
                     <div class="white_shd full margin_bottom_30">
                         <div class="full graph_head">
                             <div class="heading1 margin_0">
-                                <h2>Milky Galleri</h2>
+                                <h2>Milky Ürünler</h2>
                             </div>
                         </div>
                         <div class="full gallery_section_inner padding_infor_info">
@@ -42,16 +39,22 @@
                                     <div class="col-sm-4 col-md-3 margin_bottom_30">
                                         <div class="column">
                                             <a data-fancybox="gallery" href="@item.ImageUrl"><img class="img-responsive" src="@item.ImageUrl" alt="#" style="width: 400px; height: 250px; " /></a>
+                                            
                                         </div>
-                                        <div class="heading_section">
-                                            <h4>
-                                                
-                                                <a href="/DashboardGallery/DeleteGallery/@item.GalleryId" class="btn btn-danger">Sil</a>
-                                                <a href="/DashboardGallery/UpdateGallery/@item.GalleryId" class="btn btn-success">Güncelle</a>
-                                              
-                                            </h4>
+                                        <div class="text-center p-4">
+                                            <a class="d-block h5" href="">@item.ProductName</a>
+                                            <a class="d-block h7" href="">@item.category.CategoryName</a>
 
+                                            <span class="text-primary me-1">@item.NewPrice</span>
+                                            <span class="text-decoration-line-through">@item.OldPrice</span>
+                                            <h4>
+
+                                                <a href="#" class="btn btn-danger">Sil</a>
+                                                <a href="#" class="btn btn-success">Güncelle</a>
+
+                                            </h4>
                                         </div>
+                                      
                                     </div>
                                 }
 
@@ -89,4 +92,5 @@
         </div>
     </div>
 </div>
+
 
