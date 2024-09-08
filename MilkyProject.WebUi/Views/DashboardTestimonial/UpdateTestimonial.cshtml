@@ -1,0 +1,66 @@
+﻿@model MilkyProject.WebUi.Dtos.TestimonialDtos.UpdateTestimonialDto
+@{
+    ViewData["Title"] = "UpdateTestimonial";
+    Layout = "~/Views/Shared/DashboardLayout.cshtml";
+}
+
+<div id="content">
+    <!-- topbar -->
+    <div class="topbar">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="full">
+                <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
+                <div class="logo_section">
+                    <a href="index.html"><img class="img-responsive" src="/pluto-1.0.0/images/logo/logo.png" alt="#" /></a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- end topbar -->
+    <!-- dashboard inner -->
+    <div class="midde_cont">
+        <div class="container-fluid">
+            <div class="row column_title">
+                <div class="col-md-12">
+                    <div class="page_title">
+                        <h2>Referans Güncelleme</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image Update Form -->
+            <div class="row">
+                <div class="col-md-12">
+                    <form method="post">
+                        <div class="form-group">
+                            <label for="GalleryId">Referans ID:</label>
+                            <input type="text" class="form-control" asp-for="TestimonialId" readonly />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ImageTitle">Referans Görsel Yolu</label>
+                            <input type="text" class="form-control" asp-for="ImageUrl"
+                                   value="@Model.ImageUrl" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Description">Açıklama </label>
+                            <textarea class="form-control" asp-for="Description" rows="4" required>@Model.Description</textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Description">İsim Soyisim</label>
+                            <textarea class="form-control" asp-for="NameSurname" rows="4" required>@Model.NameSurname</textarea>
+                        </div>
+
+
+                        <button type="submit" class="btn btn-primary">Güncelle</button>
+                    </form>
+                </div>
+            </div>
+            <!-- End Image Update Form -->
+
+        </div>
+    </div>
+    <!-- end dashboard inner -->
+</div>

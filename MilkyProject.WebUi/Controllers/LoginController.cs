@@ -23,7 +23,7 @@ namespace MilkyProject.WebUi.Controllers
         {
             var result = await _signInManager.PasswordSignInAsync(loginUserDto.Username, loginUserDto.Password , false , false);
             if (result.Succeeded) {
-                return RedirectToAction("Index", "Default");
+                return RedirectToAction("Index", "Dashboard");
             }
             return View();
         }

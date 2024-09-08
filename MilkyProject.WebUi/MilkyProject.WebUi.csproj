@@ -30,4 +30,8 @@
     <ProjectReference Include="..\MilkyProject.EntityLayer\MilkyProject.EntityLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\pluto-1.0.0\images\landing_page\" />
+  </ItemGroup>
+
 </Project>

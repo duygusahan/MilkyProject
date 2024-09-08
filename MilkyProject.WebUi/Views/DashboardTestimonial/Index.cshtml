@@ -1,0 +1,77 @@
+﻿@model List<MilkyProject.WebUi.Dtos.TestimonialDtos.ResultTestimonialDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/DashboardLayout.cshtml";
+}
+
+<div id="content">
+    <!-- topbar -->
+    <div class="topbar">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="full">
+                <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
+                <div class="logo_section">
+                    <a href="index.html"><img class="img-responsive" src="/pluto-1.0.0/images/logo/logo.png" alt="#" /></a>
+                </div>
+
+            </div>
+        </nav>
+    </div>
+    <!-- end topbar -->
+    <!-- dashboard inner -->
+    <div class="midde_cont">
+        <div class="container-fluid">
+            <div class="row column_title">
+                <div class="col-md-12">
+                    <div class="page_title">
+                        <h2>Milky Referanslar</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Images Table -->
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Referans Görseli</th>
+                                <th>Referans Açıklama</th>
+                               
+
+                                <th>Sil</th>
+                                <th>Güncelle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.TestimonialId</td>
+                                    <td><img src="@item.ImageUrl" style="width: 50px; height: 50px; border-radius: 50%;"></td>
+                                    <td>@item.Description</td>
+                              
+
+
+                                    <td><a href="/DashboardTestimonial/DeleteTestimonial/@item.TestimonialId" class="btn btn-danger">Sil</a></td>
+
+                                    <td><a href="/DashboardTestimonial/UpdateTestimonial/@item.TestimonialId" class="btn btn-primary">Güncelle</a></td>
+                                </tr>
+                            }
+
+
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                    <a href="/DashboardTestimonial/CreateTestimonial/" class="btn btn-success">Referans Ekle</a>
+
+                </div>
+            </div>
+            <!-- End Images Table -->
+
+        </div>
+    </div>
+    <!-- end dashboard inner -->
+</div>
+

@@ -37,7 +37,7 @@ namespace MilkyProject.WebUi.Controllers
         {
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(resultJobDto);
-            StringContent stringContent = new StringContent(jsonData);
+            StringContent stringContent = new StringContent(jsonData ,Encoding.UTF8, "application/json");
             var responseMessage = await client.PostAsync("https://localhost:7272/api/Job", stringContent);
             if (responseMessage.IsSuccessStatusCode)
             {
