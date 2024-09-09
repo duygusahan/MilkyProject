@@ -24,3 +24,4 @@ Bu proje, süt ve süt ürünleri temalı bir web uygulamasıdır. ASP.NET Core 
 ![Ekran görüntüsü 2024-09-08 201120](https://github.com/user-attachments/assets/07760d02-6b16-4a8c-bff6-c9bae6ebde08)
 ![Ekran görüntüsü 2024-09-08 201852](https://github.com/user-attachments/assets/b40d55e8-74a2-49a2-90cc-39910d3d09f2)
 ![Ekran görüntüsü 2024-09-08 201837](https://github.com/user-attachments/assets/140b6e43-3c29-4708-bbb1-b7577cf75c5d)
+![Ekran görüntüsü 2024-09-09 120301](https://github.com/user-attachments/assets/dedccb99-4a19-4499-abdd-a416f937e26a)
